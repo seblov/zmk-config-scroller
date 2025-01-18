@@ -15,4 +15,3 @@
 &rotary_encoder_0 {
     status = "okay";
 };
-};
