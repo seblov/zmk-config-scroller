@@ -1,0 +1,10 @@
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <&rotary_encoder_0 CC_SCROLL_UP>,
+                       <&rotary_encoder_0 CC_SCROLL_DOWN>;
+        };
+    };
+};

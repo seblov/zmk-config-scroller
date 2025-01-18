@@ -1,0 +1,24 @@
+&gpio0 {
+    rotary_a: pinctrl-0 {
+        compatible = "gpio_pinctrl";
+        gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+    };
+
+    rotary_b: pinctrl-1 {
+        compatible = "gpio_pinctrl";
+        gpios = <&gpio0 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+    };
+};
+
+&pro_micro {
+    rotary_encoder_0: rotary@0 {
+        compatible = "zmk,behavior-rotary-encoder";
+        gpios = <&rotary_a>, <&rotary_b>;
+        steps = <4>; /* Adjust for your encoder */
+    };
+};
+
+&battery {
+    status = "okay";
+    io-channels = <&adc 31>; /* P0.31 (VBAT) */
+};

@@ -1,0 +1,37 @@
+/* Device Tree Configuration */
+&pro_micro {
+    compatible = "zmk,keyboard";
+};
+
+/ {
+    chosen {
+        zmk,keyboard = &pro_micro;
+    };
+};
+
+/* Rotary Encoder Configuration */
+&pro_micro {
+    rotary_encoder_0: rotary@0 {
+        compatible = "zmk,behavior-rotary-encoder";
+        gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
+                <&gpio0 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+        steps = <4>;  /* Adjust based on your encoder */
+    };
+};
+
+/* Battery Monitoring Configuration */
+&battery {
+    status = "okay";
+    io-channels = <&adc 31>; /* P0.31 (VBAT) */
+};
+
+/* Keymap Configuration */
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <&rotary_encoder_0 CC_SCROLL_UP>, <&rotary_encoder_0 CC_SCROLL_DOWN>;
+        };
+    };
+};

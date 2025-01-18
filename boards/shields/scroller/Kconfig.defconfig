@@ -1,0 +1,18 @@
+if SHIELD_SCROLLER
+
+config ZMK_BATTERY
+    default y
+
+config ZMK_BATTERY_REPORTING
+    default y
+
+config ZMK_BEHAVIOR_ROTARY_ENCODER
+    default y
+
+config ADC
+    default y
+
+config BT_CTLR_TX_PWR_0
+    default y
+
+endif
