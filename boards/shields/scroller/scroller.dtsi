@@ -19,19 +19,13 @@
     };
 };
 
-/* Battery Monitoring Configuration */
-&battery {
-    status = "okay";
-    io-channels = <&adc 31>; /* P0.31 (VBAT) */
-};
 
-/* Keymap Configuration */
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = <&rotary_encoder_0 CC_SCROLL_UP>, <&rotary_encoder_0 CC_SCROLL_DOWN>;
+             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
     };
 };
