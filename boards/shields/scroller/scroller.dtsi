@@ -1,31 +1,17 @@
-/* Device Tree Configuration */
-&pro_micro {
-    compatible = "zmk,keyboard";
-};
-
 / {
     chosen {
-        zmk,keyboard = &pro_micro;
     };
-};
 
-/* Rotary Encoder Configuration */
-&pro_micro {
-    rotary_encoder_0: rotary@0 {
-        compatible = "zmk,behavior-rotary-encoder";
-        gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-                <&gpio0 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-        steps = <4>;  /* Adjust based on your encoder */
+    rotary_encoder_0: rotary_encoder_0 {
+        compatible = "alps,ec11";
+        steps = <4>;
+
+        a-gpios = <&pro_micro 10 GPIO_PULL_UP>;
+        b-gpios = <&pro_micro 11 GPIO_PULL_UP>;
     };
-};
-
-
-/ {
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
-        };
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <rotary_encoder_0>;
+        triggers-per-rotation = <20>;
     };
 };
