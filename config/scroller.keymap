@@ -6,7 +6,8 @@
         compatible = "zmk,keymap";
 
         default_layer {
-             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            bindings = <>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
     };
 };
