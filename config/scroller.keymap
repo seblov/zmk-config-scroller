@@ -3,8 +3,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = <&rotary_encoder_0 CC_SCROLL_UP>,
-                       <&rotary_encoder_0 CC_SCROLL_DOWN>;
+            bindings = <&rotary_encoder_0 &inc_dec_kp KC_WH_U KC_WH_D>;
         };
     };
 };
