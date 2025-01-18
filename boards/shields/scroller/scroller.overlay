@@ -17,8 +17,3 @@
         steps = <4>; /* Adjust for your encoder */
     };
 };
-
-&battery {
-    status = "okay";
-    io-channels = <&adc 31>; /* P0.31 (VBAT) */
-};
