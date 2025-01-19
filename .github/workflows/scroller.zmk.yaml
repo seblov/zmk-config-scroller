@@ -1,0 +1,12 @@
+file_format: "1"
+id: scroller
+name: Scroller
+type: shield
+url: https://github.com/seblov/zmk-config-scroller
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - studio
+siblings:
+  - scroller
