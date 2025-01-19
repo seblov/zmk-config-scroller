@@ -7,7 +7,7 @@
         steps = <4>;
 
         a-gpios = <&pro_micro 10 GPIO_PULL_UP>;
-        b-gpios = <&pro_micro 11 GPIO_PULL_UP>;
+        b-gpios = <&pro_micro 16 GPIO_PULL_UP>;
     };
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
