@@ -6,13 +6,13 @@
         compatible = "alps,ec11";
         steps = <4>;
 
-        a-gpios = <&pro_micro 10 GPIO_PULL_UP>;
-        b-gpios = <&pro_micro 16 GPIO_PULL_UP>;
+        a-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     };
     scroll_rotation: sensor_rotation_scroll {
         compatible = "zmk,behavior-sensor-rotate-var";
-        #sensor—binding—cells = <2>;
-        bindings = <&msc>, <&msc>;
+        sensor—binding—cells = <2>;
+        bindings = &msc SCRL_DOWN, &msc SCRL_LEFT;
         tap—ms = <30>;
     };
     sensors: sensors {
