@@ -8,16 +8,16 @@
 
         default_layer {
             bindings = <
-&none 
+                &none 
             >;
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            /*sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;*/
+
+            scroll_rotation: sensor_rotation_scroll {
+                compatible = "zmk,behavior-sensor-rotate-var";
+                sensor—bindings = <2>;
+                bindings = &msc SCRL_DOWN, &msc SCRL_LEFT;
+                tap—ms = <30>;
+            };
         };
     };
-};
-
-scroll_rotation: sensor_rotation_scroll {
-        compatible = "zmk,behavior-sensor-rotate-var";
-        sensor—bindings = <2>;
-        bindings = &msc SCRL_DOWN, &msc SCRL_LEFT;
-        tap—ms = <30>;
 };
