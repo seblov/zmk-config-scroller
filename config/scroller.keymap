@@ -14,8 +14,8 @@
 
             scroll_rotation: sensor_rotation_scroll {
                 compatible = "zmk,behavior-sensor-rotate-var";
-                sensor—bindings = <2>;
-                bindings = &msc SCRL_DOWN, &msc SCRL_LEFT;
+                #sensor—bindings-cells = <2>;
+                bindings = &msc SCRL_DOWN, &msc SCRL_UP;
                 tap—ms = <30>;
             };
         };
