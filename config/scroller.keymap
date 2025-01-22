@@ -4,24 +4,29 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-
     behaviors {
         scroll_rotation: sensor_rotation_scroll {
-                compatible = "zmk,behavior-sensor-rotate-var";
-                #sensor-binding-cells = <2>;
-                bindings = <&msc>, <&msc>;
-                tap-ms = <30>;
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&mouse_scroll>, <&mouse_scroll>;
+            tap-ms = <30>;
+        };
+
+        mouse_scroll: behavior_mouse_scroll {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+        };
     };
-    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = <
-                &none 
+            bindings = < &none >;
+            sensor-bindings = <
+                &scroll_rotation SCRL_DOWN,
+                &scroll_rotation SCRL_UP
             >;
-            sensor-bindings = <&msc SCRL_DOWN &msc SCRL_UP>;
-
-            };
         };
     };
+};
