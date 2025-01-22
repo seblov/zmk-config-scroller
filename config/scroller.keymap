@@ -3,6 +3,15 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+
+    behaviors {
+        scroll_rotation: sensor_rotation_scroll {
+                compatible = "zmk,behavior-sensor-rotate-var";
+                #sensor—bindings-cells = <2>;
+                bindings = <&msc>, <&msc>;
+                tap—ms = <30>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -10,13 +19,8 @@
             bindings = <
                 &none 
             >;
-            /*sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;*/
+            sensor-bindings = <&msc SCRL_DOWN &msc SCRL_UP>;
 
-            scroll_rotation: sensor_rotation_scroll {
-                compatible = "zmk,behavior-sensor-rotate-var";
-                #sensor—bindings-cells = <2>;
-                bindings = &msc SCRL_DOWN, &msc SCRL_UP;
-                tap—ms = <30>;
             };
         };
     };
