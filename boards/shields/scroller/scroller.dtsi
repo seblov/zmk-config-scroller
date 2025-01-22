@@ -9,12 +9,7 @@
         a-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     };
-    scroll_rotation: sensor_rotation_scroll {
-        compatible = "zmk,behavior-sensor-rotate-var";
-        sensor—bindings = <2>;
-        bindings = &msc SCRL_DOWN, &msc SCRL_LEFT;
-        tap—ms = <30>;
-    };
+    
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&rotary_encoder_0>;
