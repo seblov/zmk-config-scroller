@@ -10,7 +10,7 @@
                 compatible = "zmk,behavior-sensor-rotate-var";
                 #sensor-bindings-cells = <2>;
                 bindings = <&msc>, <&msc>;
-//                tap—ms = <30>;
+                tap—ms = <30>;
     };
     };
     keymap {
@@ -25,4 +25,3 @@
             };
         };
     };
-};
