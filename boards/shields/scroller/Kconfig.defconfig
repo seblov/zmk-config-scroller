@@ -1,21 +1,3 @@
 if SHIELD_SCROLLER
-
-config ZMK_KEYBOARD_NAME
-    default "Scroller"
-
-config ZMK_BATTERY
-    default y
-
-config ZMK_USB
-    default y
-
-config ZMK_BATTERY_REPORTING
-    default y
-
-CONFIG_ZMK_POINTING
-    default y
-
-CONFIG_ZMK_POINTING_SMOOTH_SCROLLING
-    default y
     
 endif
