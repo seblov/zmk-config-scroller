@@ -12,10 +12,10 @@
             tap-ms = <30>;
         };
 
-        mouse_scroll: behavior_mouse_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-        };
+//        mouse_scroll: behavior_mouse_scroll {
+//            compatible = "zmk,behavior-sensor-rotate-var";
+//            #sensor-binding-cells = <2>;
+//        };
     };
 
     keymap {
