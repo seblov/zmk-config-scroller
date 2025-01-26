@@ -1,3 +1,6 @@
 if SHIELD_SCROLLER
     
+config ZMK_KEYBOARD_NAME
+     default "Scroller"
+
 endif
