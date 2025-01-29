@@ -4,7 +4,7 @@
 
     rotary_encoder_0: rotary_encoder_0 {
         compatible = "alps,ec11";
-        steps = <1>;
+        steps = <100>;
 
         a-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -13,6 +13,6 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&rotary_encoder_0>;
-        triggers-per-rotation = <1>;
+        triggers-per-rotation = <20>;
     };
 };
