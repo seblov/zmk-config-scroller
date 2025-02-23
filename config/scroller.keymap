@@ -1,15 +1,16 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 
 / {
     behaviors {
-        scroll_rotation: sensor_rotation_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <30>;
+        scroll_encoder: scroll_encoder {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        tap-ms = <30>;
         };
 
 //        mouse_scroll: behavior_mouse_scroll {
@@ -23,8 +24,7 @@
 
         default_layer {
             bindings = < &none >;
-            sensor-bindings = <
-                &scroll_rotation SCRL_DOWN SCRL_UP
+            sensor-bindings = <  &scroll_rotation SCRL_DOWN SCRL_UP >;
             >;
         };
     };
